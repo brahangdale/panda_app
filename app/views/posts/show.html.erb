@@ -1,0 +1,38 @@
+<div class="well">
+	<% if @post.present? %>
+		<%= post.each  do |post| %>
+			<h2>
+				<%= post.title %>
+			</h2>
+			<% if post.image.present? %>
+				<%= image_tag(@post.image.url, class: 'img-responsive', width: 300) %>
+			<% end %>
+			<br />
+				<%= post.description %>
+			<div class="clearfix"></div>
+		<% end %>
+		<% @comments.each do |comment| %>
+			<% next if comment.new_record? %>
+				<div class="well">
+					<%= comment.comment %>		
+			</div>
+		<% end %>
+			<div class="well">
+				<%= form_for @comment,  url:  create_comment_path do |f| %>
+					<%= f.hidden_field :post_id %>
+						<div class="form-group">
+							<%=  f.text_area :comment, class: 'form-control' %>
+						</div>
+							<%= f.submit 'Submit Comment', class: 'btn btn-primary' %>
+					<% end %>
+				<% end %>
+			</div>
+		<% else %>
+		sdfghjk
+	<% end %>
+</div>		
+
+
+
+
+

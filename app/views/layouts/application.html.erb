@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PandaApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<% if params[:action] == 'index' %>
+	<%= image_tag "fb.jpg", :style => "display: block;height: 200px;
+    width: 1362px;
+    margin-left: auto;
+    margin-right: auto; border-radius: 0%"  %>
+
+<% elsif params[:action] == 'art' %>
+	<%= image_tag "art.jpg", :style => "display: block;height: 200px;
+    width: 1362px;
+    margin-left: auto;
+    margin-right: auto; border-radius: 0%"  %>
+
+<% elsif params[:action] == 'photography' %>
+<%= image_tag "photograpy.jpg", :style => "display: block;height: 200px;
+    width: 1362px;
+    margin-left: auto;
+    margin-right: auto; border-radius: 0%"  %>
+
+	<% elsif params[:action] == 'animals' %>
+	<%= image_tag "animals.jpg", :style => "display: block;height: 200px;
+    width: 1362px;
+    margin-left: auto;
+    margin-right: auto; border-radius: 0%"  %>
+
+<% elsif params[:action] == 'travel' %>
+<%= image_tag "Travels.jpg", :style => "display: block;height: 200px;
+    width: 1362px;
+    margin-left: auto;
+    margin-right: auto; border-radius: 0%"  %>
+
+<% end %>
+    
+<%= render 'layouts/navigation' %>
+ <p class="notice"><%= notice %></p>
+ <p class="alert"><%= alert %></p>
+<div  class="container">
+<%= yield %>
+</div>
+</body>
+</html>

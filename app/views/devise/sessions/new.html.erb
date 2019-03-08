@@ -1,0 +1,35 @@
+<h1 class="h1">Log In</h1>
+<div class="well">
+
+
+<div class="imgcontainer">
+    
+    <div class="Avatar">
+    <%= image_tag "img_avatar2.png" %>
+</div>
+  </div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: 'form-control',autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %><br />
+    <%= f.password_field :password,  class: 'form-control', autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %> 
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>

@@ -1,0 +1,23 @@
+<%= form_for @post do |f| %>
+	<div class="row">
+		<div class="col-xs-12">
+			<% if  @post.errors.any? %>
+				<ul>
+					<% @post.errors.messages.ech do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			<% end %>
+		</div>
+	</div>
+	<div class="form-group">
+		<label>Title</label><br>
+			<%= f.text_field :title , class:  "form-control", placeholder: "Enter the post name" %><br><br>
+	</div>
+	<div class="form-group">
+		<label>Description</label>
+			<%= f.text_area :description,  rows:10, class: "form-control" %>
+	</div>
+
+	<%= f.submit %>
+<% end %>
