@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	
+
 	def edit
 		@user = current_user
 	end
@@ -12,6 +12,6 @@ class UsersController < ApplicationController
 	end
 	private
 		def  user_params
-			params.require(:user).permit(:first_name, :last_name)
+			params.require(:user).permit(:first_name, :last_name, :bio, :facebook_url,:twitter_url, :website_url, :image)
 		end
 end

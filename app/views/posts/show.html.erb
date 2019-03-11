@@ -1,36 +1,58 @@
-<div class="well">
-	<% if @post.present? %>
-		<%= post.each  do |post| %>
-			<h2>
-				<%= post.title %>
-			</h2>
-			<% if post.image.present? %>
-				<%= image_tag(@post.image.url, class: 'img-responsive', width: 300) %>
-			<% end %>
-			<br />
-				<%= post.description %>
-			<div class="clearfix"></div>
-		<% end %>
-		<% @comments.each do |comment| %>
-			<% next if comment.new_record? %>
-				<div class="well">
-					<%= comment.comment %>		
-			</div>
-		<% end %>
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-8">
 			<div class="well">
-				<%= form_for @comment,  url:  create_comment_path do |f| %>
-					<%= f.hidden_field :post_id %>
-						<div class="form-group">
-							<%=  f.text_area :comment, class: 'form-control' %>
-						</div>
-							<%= f.submit 'Submit Comment', class: 'btn btn-primary' %>
-					<% end %>
-				<% end %>
+				<div class="show-img">
+					<%= image_tag(current_user.image.url) %>
+				</div>
+ 					<h1 class="h1">Bhagyashri Rahangdale </h1>
+ 					<p class="para">Community Member</p>
+ 					<p class="para1">This lazy panda forgot to write something about itself.</p>
 			</div>
-		<% else %>
-		sdfghjk
-	<% end %>
-</div>		
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-8">
+			<% if @posts.present? %>
+				<%= @posts.each do |post| %>
+					<div class="well">
+						<% if post.image.present? %>
+							<div class="style_image">
+								<%= image_tag(post.image.url, class: 'img-responsive') %>
+							</div>
+						<% else %>	
+							<div class="style_image">
+								<%= image_tag('dummy_img.png') %>
+							</div>
+						<% end %>
+							<h2><%= post.title %></h2><br>
+									<%= post.description %>
+						<% post.comments.each do |comment| %>
+							<div class="well well-white">
+								<% next if comment.new_record? %>
+									<%= comment.comment %>
+							</div>
+						<% end %>
+						<%= form_for post.comments.build,  url:  create_comment_path do |f| %>
+									<%= f.hidden_field :post_id %>
+								<div class="form-group">
+									<%=  f.text_area :comment, class: 'form-control' %>
+								</div>
+									<%= f.submit 'Comment', class: 'btn btn-primary' %>
+						<% end %>
+					</div>
+				<% end %>	
+			<% else %>
+				<h1>wertyuidfg</h1>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+
 
 
 

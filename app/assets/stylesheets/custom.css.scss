@@ -9,20 +9,36 @@
 }
 .container
 {
-	background: #e6e6e6
+	/*background: #e6e6e6*/
 }
 .style_image img
 {
   display: block;
   height: 250px;
-  width: 250px;
-  margin-left: auto;
+  width: 550px;
+  margin-left: 7pxmk;
   margin-right: auto;
   border-radius: 0%;
   border-color: black, solid  ;
 }
-
-
+.navbar-default .navbar-nav > li > a {
+    color: #777;
+    margin-top: 10px;
+}
+.para
+{
+  margin: 0 0 10px;
+    color: red;
+    font-weight: 20px,bold;
+    font-weight: bold;
+}
+.para1
+{
+  margin: 0 0 10px;
+    color: black;
+    font-weight: 10px;
+    font-weight: bold;
+}
 .img img{
 
   height: 210px;
@@ -31,29 +47,33 @@
   margin-right: auto;
  
 }
-
-
-.custom-well
+.well
 {
-	display:block;
-	height: 500px;
-  width: 500px;
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
   background-color: white;
- border: 1px solid #e3e3e3;
- border-radius: 4px;
- margin-left: auto;
- margin-right: auto;
- margin-top: 30px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
 }
+.well-white{
+background-color: white;
+    width: 690px;
+    height: 50px;
+}
+.well_edit
+{
+width: 1000px;
+    height: 600px;
+}
+
+
 .h1
 {
-	 font-style: oblique;
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
+ font-style: normal;
+ font-size: 30px;
+ font-weight: bold;
+   
 }
 .imagecontainer
 {
@@ -73,6 +93,18 @@ img
 {
   border-radius: 0%
 }
+.pull-left show-img 
+{
+  border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.body
+{
+  background-color: #cce4e1;
+}
 
 .form-control
 {
@@ -90,3 +122,56 @@ img
     margin-top: 10px;
     border: 1px solid black;
   }
+.pull-left img
+{
+  display: block;
+    border-radius: 0%;
+    height: 150px;
+    width: 150px;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+
+}
+.pull-left image-img
+{
+  border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.well-comment
+{
+  height: 500px;
+
+}
+.show-img img 
+{
+      float: left;
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.col-md-8 {
+    width: 66.6666666667%;
+    margin-top: 10px;
+    }
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.428571429;
+    color: #333333;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.field
+{
+  margin-left: 10px;
+}

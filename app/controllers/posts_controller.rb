@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
 	def index
 	end
+
 	def new
 		@post = Post.new
 	end
@@ -17,11 +18,13 @@ class PostsController < ApplicationController
 			render 'new'
 		end
 	end
+
 	def show
-		@post = Post.find(params[:id])
-		@comments =  @post.comments
-		@comment = @post.comments.build
+		@posts = current_user.posts.includes(:comments)
+		# @comments =  @posts.comments
+		# @comment = @posts.comments.build
 	end
+
 	def edit
 		@post = Post.find(params[:id])
 	end

@@ -63,8 +63,8 @@
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
                 <li><%= link_to 'New Post', new_post_path(@post) %></li><hr>
-                <li><%= link_to 'My Profile' %></li><hr>
-                <li><%= link_to 'Edit Profile' %></li> <hr>
+                <li><%= link_to 'My Profile', post_path(current_user)  %></li><hr>
+                <li><%= link_to 'Edit Profile',  edit_user_path(current_user) %></li> <hr>
                 <li><%= link_to 'SignOut', destroy_user_session_path, method: :delete %></li><hr>
             
             <% else %>
