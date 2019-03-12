@@ -17,7 +17,7 @@
 	<div class="col-md-12">
 		<div class="col-md-8">
 			<% if @posts.present? %>
-				<%= @posts.each do |post| %>
+				<% @posts.each do |post| %>
 					<div class="well">
 						<% if post.image.present? %>
 							<div class="style_image">
@@ -46,7 +46,7 @@
 					</div>
 				<% end %>	
 			<% else %>
-				<h1>wertyuidfg</h1>
+				<h1> Sorry, No posts Yet  </h1>
 			<% end %>
 		</div>
 	</div>

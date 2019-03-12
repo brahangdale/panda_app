@@ -44,9 +44,9 @@ def create_comment
 	@comment.user_id = current_user.id
 	@comment.save
 	post = @comment.post
-	user = post.user
+	user1 = post.user
 	user2 = @comment.user
-	UserMailer.comment_mail(user,user2).deliver_later
+	Resque.enqueue(Archive, user1.id, user2.id)
 	redirect_to post_path(post)
 end
 
