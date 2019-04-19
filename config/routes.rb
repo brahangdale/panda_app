@@ -1,4 +1,5 @@
 
+
 Rails.application.routes.draw do
   devise_for :users , controllers: {
         sessions: 'users/sessions'
@@ -71,6 +72,7 @@ Rails.application.routes.draw do
     get 'photography' => "home#photography"
     get 'animals' => "home#animals"
     get 'travel' => "home#travel"
+    
 
     mount Resque::Server, :at => "/resque"
 end
